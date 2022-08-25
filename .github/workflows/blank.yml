@@ -16,7 +16,13 @@ jobs:
     steps:
       - name: TEST
         run: |
-          ls -la
+          pwd
+          ls -la ..
+          echo '-----'
+          ls -la ../..
+          echo '-----'
+          ls -la ../../..
+          
           mv documents2/* documents/
           ls -la documents/
       - uses: actions/checkout@v2
