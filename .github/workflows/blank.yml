@@ -19,9 +19,9 @@ jobs:
           pwd
           ls -la ..
           echo '-----'
-          ls -la ../../md_test
+          ls -la ../../md_test/md_test
           echo '-----'
-          mv ../../md_test/documents2/* ../../md_test/documents
+          mv ../../md_test/md_test/documents2/* ../../md_test/md_test/documents
           echo '-----'
       - uses: actions/checkout@v2
       - uses: baileyjm02/markdown-to-pdf@v1
