@@ -9,9 +9,9 @@ bla-bla
 KITTY
 ------
 
-![kitty](https://github.com/testeous/md_test/blob/main/documents/images/kitty.jpg)
+![kitty](images/kitty.jpg)
 
 CoreMark
 -------
 
-![CoreMark](https://github.com/testeous/md_test/blob/main/documents/images/coremark.png)
+![CoreMark](images/coremark.png)
