@@ -15,29 +15,14 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - name: TEST
-        run: |
-          pwd
-          ls -la ..
-          echo '-----'
-          ls -la ../md_test
-          mv ../md_test/documents2 ../md_test/documents
-          echo '-------'
-          ls -la ../../
-          echo '-------'
-          ls -la ../../md_test
-          echo '-------'
-          ls -la ../../
-          echo '-----'
-      - uses: baileyjm02/markdown-to-pdf@v1
-        with:
-          input_dir: documents
-          output_dir: pdfs
-          images_dir: documents
-          # for example <img src="./images/file-name.png">
-          image_import: ./
-          # Default is true, can set to false to only get PDF files
-          build_html: false
+      - name: Pandoc install
+        run: sudo apt-get install -y pandoc
+      - name: MD to PDF
+        run: | 
+          mkdir pdfs/
+          touch hm.md
+          echo -e "lol kek \n cheburek \n ------------------ /n kek" > hm.md
+          pandoc hm.md -s -o pdfs/test.pdf
       - name: Set current date as env variable
         run: echo "NOW=$(date +'%d-%h_%H-%M')" >> $GITHUB_ENV
       - uses: "marvinpinto/action-automatic-releases@latest"
