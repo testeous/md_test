@@ -16,7 +16,9 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: Pandoc install
-        run: sudo apt-get install -y pandoc
+        run: |
+          sudo apt-get install -y pandoc
+          sudo apt-get install texlive-latex-base
       - name: MD to PDF
         run: | 
           mkdir pdfs/
