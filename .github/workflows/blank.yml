@@ -14,16 +14,16 @@ jobs:
     name: Build PDF
     runs-on: ubuntu-latest
     steps:
+      - uses: actions/checkout@v2
       - name: TEST
         run: |
           pwd
           ls -la ..
           echo '-----'
-          ls -la ../../md_test/md_test
+          ls -la ../../
+          echo '-------'
+          ls -la ../../../
           echo '-----'
-          mv ../../md_test/md_test/documents2/* ../../md_test/md_test/documents
-          echo '-----'
-      - uses: actions/checkout@v2
       - uses: baileyjm02/markdown-to-pdf@v1
         with:
           input_dir: documents
