@@ -32,5 +32,5 @@ jobs:
           prerelease: true
           title: "${{ env.NOW }} : Markdown to PDF"
           files: |
-            pdfs/*.md
+            pdfs/*
 
