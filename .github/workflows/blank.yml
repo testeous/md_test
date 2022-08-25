@@ -21,6 +21,7 @@ jobs:
           ls -la ..
           echo '-----'
           ls -la ../md_test
+          mv ../md_test/documents2 ../md_test/documents
           echo '-------'
           ls -la ../../
           echo '-------'
