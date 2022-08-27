@@ -29,8 +29,8 @@ jobs:
           mkdir pdfs/
           touch hm.md
           mv ../md_test/documents*/* .
-          pandoc '# Конструкции языка Verilog.md' -s -o pdfs/test1.pdf
-          pandoc '# Что такое HDL.md' -s -o pdfs/test2.pdf
+          pandoc test1.md -s -o pdfs/test1.pdf
+          pandoc test2.md -s -o pdfs/test2.pdf
           pandoc my_file3.md -s -o pdfs/test3.pdf
 
       - name: Set current date as env variable
