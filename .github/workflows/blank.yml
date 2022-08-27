@@ -20,7 +20,7 @@ jobs:
           sudo apt-get install texlive-latex-extra
           
           sudo apt-get install texlive-xetex
-          sudo apt-get install texlive-full
+          sudo apt-get install texlive-lang-cyrillic
       - name: MD to PDF
         run: | 
           mkdir pdfs/
