@@ -31,7 +31,7 @@ jobs:
           mkdir pdfs/
           touch hm.md
           mv ../md_test/documents*/* .
-          pandoc --pdf-engine=xelatex test1.md -V lang=RU-ru -V header-includes='\newfontfamily\cyrillicfont[Script=Cyrillic]{Times New Roman}' -s -o pdfs/test1.pdf
+          pandoc --pdf-engine=xelatex test1.md -V lang=RU-ru -V header-includes='\newfontfamily\cyrillicfont[Script=Cyrillic]{Arial}' -s -o pdfs/test1.pdf
           pandoc --pdf-engine=xelatex my_file3.md -s -o pdfs/test3.pdf
 
       - name: Set current date as env variable
