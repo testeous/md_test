@@ -18,7 +18,9 @@ jobs:
           sudo apt-get install texlive-fonts-recommended
           sudo apt-get install texlive-fonts-extra
           sudo apt-get install texlive-latex-extra
+          
           sudo apt-get install texlive-xetex
+          sudo apt-get install texlive-full
       - name: MD to PDF
         run: | 
           mkdir pdfs/
