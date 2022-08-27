@@ -30,7 +30,6 @@ jobs:
           touch hm.md
           mv ../md_test/documents*/* .
           pandoc test1.md -s -o pdfs/test1.pdf
-          pandoc test2.md -s -o pdfs/test2.pdf
           pandoc my_file3.md -s -o pdfs/test3.pdf
 
       - name: Set current date as env variable
