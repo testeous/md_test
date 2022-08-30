@@ -2,12 +2,7 @@
 
 name: Docs to PDF
 on:
-  push:
-    branches:
-      - main
-    paths:
-      - 'documents/**.md'
-      - 'documents2/**.md'
+  workflow_dispatch
 
 jobs:
   converttopdf:
@@ -18,18 +13,25 @@ jobs:
       - name: Pandoc install
         run: |
           sudo apt-get install -y pandoc
-
+          echo "======================STOP_MGS1========================="
           sudo apt-get install texlive-latex-base
-          sudo apt-get install texlive-fonts-recommended
+          echo "======================STOP_MGS2========================="
+          sudo apt-get install texlive-fonts-recommended          
+          echo "======================STOP_MGS3========================="
           sudo apt-get install texlive-fonts-extra
+          echo "======================STOP_MGS4========================="
           sudo apt-get install texlive-latex-extra
-
+          echo "======================STOP_MGS5========================="
+          sudo apt-get install texlive-xetex
+          echo "======================STOP_MGS6========================="
+          sudo apt-get install texlive-lang-cyrillic
+          echo "======================STOP_MGS7========================="
       - name: MD to PDF
         run: | 
           mkdir pdfs/
           touch hm.md
           mv ../md_test/documents*/* .
-          pandoc --pdf-engine=xelatex test1.md -s -o pdfs/test1.pdf
+          pandoc --pdf-engine=xelatex test1.md -V lang=RU-ru -V header-includes='\newfontfamily\cyrillicfont[Script=Cyrillic]{Arial}' -s -o pdfs/test1.pdf
           pandoc --pdf-engine=xelatex my_file3.md -s -o pdfs/test3.pdf
 
       - name: Set current date as env variable
